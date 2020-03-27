@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ADGTaskTwoSummer</string>
+    <string name="cadb">Custom Alert Dialog Box</string>
+    <string name="okay">Okay</string>
+    <string name="std">Date Picker</string>
+</resources>
