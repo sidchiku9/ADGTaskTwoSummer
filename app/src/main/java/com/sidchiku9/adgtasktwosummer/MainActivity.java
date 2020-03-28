@@ -36,6 +36,8 @@ public class MainActivity extends Activity {
 
                 final Dialog dialog = new Dialog(context);
                 dialog.setContentView(R.layout.custom);
+                v = getWindow().getDecorView();
+                v.setBackgroundResource(android.R.color.transparent);
                 dialog.setTitle("Android Custom Dialog Box");
 
                 TextView text = dialog.findViewById(R.id.text);
@@ -61,13 +63,13 @@ public class MainActivity extends Activity {
                 mMonth = c.get(Calendar.MONTH);
                 mDay = c.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog dpd = new DatePickerDialog(getApplicationContext(), new DatePickerDialog.OnDateSetListener() {
+                DatePickerDialog dpd = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         button2.setText(new StringBuilder().append(dayOfMonth).append("/").append(month).append("/").append(year));
                     }
                 },mYear,mMonth,mDay);
-                dpd.getDatePicker();
+                dpd.show();
             }
         });
 
