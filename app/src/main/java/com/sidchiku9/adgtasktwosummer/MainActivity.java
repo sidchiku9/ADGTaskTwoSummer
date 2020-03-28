@@ -12,14 +12,21 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.Calendar;
 
 public class MainActivity extends Activity {
 
     final Context context = this;
-    Button button, button2, toast;
+    Button button, button2, toast, snackbar,pb;
     private int mYear, mMonth, mDay;
+    private int duration = Toast.LENGTH_SHORT;
+    CharSequence text = "Oh Snackbar! You are so true!";
+    private AVLoadingIndicatorView avl;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,11 @@ public class MainActivity extends Activity {
 
         button = findViewById(R.id.cd);
         button2 = findViewById(R.id.dp);
+        snackbar = findViewById(R.id.snack);
+        toast = findViewById(R.id.toast);
+        pb = findViewById(R.id.pb);
+        avl = findViewById(R.id.avl);
+        avl.setIndicator(String.valueOf(duration=5));
 
         button.setOnClickListener(new OnClickListener() {
             @Override
@@ -70,6 +82,29 @@ public class MainActivity extends Activity {
                     }
                 },mYear,mMonth,mDay);
                 dpd.show();
+            }
+        });
+
+        snackbar.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar sb = Snackbar.make(v,"You are addicted to my app",Snackbar.LENGTH_SHORT);
+                sb.show();
+            }
+        });
+
+        toast.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast tst = Toast.makeText(context,text,duration);
+                tst.show();
+            }
+        });
+
+        pb.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                avl.show();
             }
         });
 

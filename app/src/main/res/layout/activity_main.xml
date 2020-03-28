@@ -4,27 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+   >
 
     <Button
         android:id="@+id/cd"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
         android:text="@string/cadb"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/pb" />
 
     <Button
         android:id="@+id/dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
         android:text="@string/std"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cd" />
+
+    <Button
+        android:id="@+id/snack"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/snack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dp" />
+
+    <Button
+        android:id="@+id/toast"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/toast"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snack" />
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/avl"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:background="#6200eeff"
+        app:indicatorName="BallPulseIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pb"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/pb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

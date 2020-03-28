@@ -3,4 +3,7 @@
     <string name="cadb">Custom Alert Dialog Box</string>
     <string name="okay">Okay</string>
     <string name="std">Date Picker</string>
+    <string name="snack">SnackBar</string>
+    <string name="toast">Toast</string>
+    <string name="pb">Progress Bar</string>
 </resources>
