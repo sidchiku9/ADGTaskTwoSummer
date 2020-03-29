@@ -7,6 +7,6 @@
 4. Toast
 5. Custom Dialog Box
 
-> I have tried implementing the guidelines of ![](https://material.io) wherever I can.
+> I have tried implementing the guidelines of ''' material.io ''' wherever I can.
 
 Made with ❤️ by sidchiku9
