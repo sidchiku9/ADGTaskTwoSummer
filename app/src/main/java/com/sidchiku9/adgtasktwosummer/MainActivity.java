@@ -6,16 +6,20 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.wang.avi.AVLoadingIndicatorView;
+import com.wang.avi.indicators.BallPulseIndicator;
 
 import java.util.Calendar;
 
@@ -23,11 +27,11 @@ public class MainActivity extends Activity {
 
     final Context context = this;
     Button button, button2, toast, snackbar,pb;
-    private int mYear, mMonth, mDay;
+    private int mYear, mMonth, mDay, i=0;
     private int duration = Toast.LENGTH_SHORT;
     CharSequence text = "Oh Snackbar! You are so true!";
-    private AVLoadingIndicatorView avl;
-
+    AVLoadingIndicatorView avl;
+    CountDownTimer ct;
 
     public void onCreate(Bundle savedInstanceState) {
 
@@ -40,7 +44,6 @@ public class MainActivity extends Activity {
         toast = findViewById(R.id.toast);
         pb = findViewById(R.id.pb);
         avl = findViewById(R.id.avl);
-        avl.setIndicator(String.valueOf(duration=5));
 
         button.setOnClickListener(new OnClickListener() {
             @Override
@@ -104,7 +107,17 @@ public class MainActivity extends Activity {
         pb.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                avl.show();
+                CountDownTimer ct = new CountDownTimer(1000,5000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        avl.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        avl.hide();
+                    }
+                }.start();
             }
         });
 
